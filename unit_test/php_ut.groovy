@@ -8,8 +8,6 @@ def installdependencies {
     )
 }
 
-
-
 def runUnitTestsAndSetGitHubStatus() {
     catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
         sh 'php artisan test'
