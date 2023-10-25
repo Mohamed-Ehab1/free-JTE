@@ -2,7 +2,7 @@ void call(){
    
     def installdependencies() {
         println "install dependencies... "
-        installpack = sh (
+          sh (
             returnStdout: true,
             script: """
             apt update && apt upgrade -y && apt install composer -y && composer install
