@@ -1,5 +1,5 @@
 import hudson.AbortException
-void call(context){
+void call(){
 
     println "checking out code ..."
     
