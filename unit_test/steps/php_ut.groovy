@@ -1,7 +1,8 @@
 void call() {
     println "starting unit test for php"
-
-   
+    installdependencies()
+    runUnitTestsAndSetGitHubStatus()
+    
 }
 
 def installdependencies() {
