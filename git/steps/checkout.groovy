@@ -1,3 +1,4 @@
+import hudson.AbortException
 void call(){
 
     println "checking out code ..."
