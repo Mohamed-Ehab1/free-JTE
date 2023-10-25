@@ -1,5 +1,10 @@
 void call() {
-    def installdependencies() {
+    println "starting unit test for php"
+
+   
+}
+
+def installdependencies() {
         echo "install dependencies... "
         sh """
             apt update
@@ -9,10 +14,9 @@ void call() {
         """
     }
 
-    def runUnitTestsAndSetGitHubStatus() {
+def runUnitTestsAndSetGitHubStatus() {
         echo "run unit test"
         catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
             sh 'php artisan test'
         }
     }
-}
