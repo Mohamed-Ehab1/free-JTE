@@ -15,10 +15,6 @@ void call(){
         catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
             sh 'php artisan test'
         }
-        script {
-            def currentBuildResult = currentBuild.resultIsBetterOrEqualTo('SUCCESS') ? 'SUCCESS' : 'FAILURE'
-            updateGitHubStatus(currentBuildResult)
-        }
     }
 
 
