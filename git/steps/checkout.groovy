@@ -1,14 +1,10 @@
 import hudson.AbortException
 void call(){
+    checkout()
+}
 
-    println "checking out code ..."
-    
-    deleteDir()
-    try {
-        checkout scm
-    } catch(AbortException ex){
-        error "scm not presented, skipping source code checkout"
-        stageFailure = false
-        throw ex
+def checkout() {
+    script {
+        checkout scmGit(branches: [[name: '*/main']], extensions: [cloneOption(noTags: false, reference: '', shallow: false)], userRemoteConfigs: [[url: 'https://github.com/Mohamed-Ehab1/newlaraveluntitest']])
     }
 }
