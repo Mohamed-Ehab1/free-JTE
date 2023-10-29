@@ -10,7 +10,7 @@ def installdependencies() {
         sh """
             apt update
             apt upgrade -y
-            apt install --update php
+            apt install php8
             apt install composer -y
             composer install
         """
