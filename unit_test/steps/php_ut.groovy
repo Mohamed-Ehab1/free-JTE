@@ -8,7 +8,6 @@ void call() {
 def installdependencies() {
         echo "install dependencies... "
         sh """
-            apt install composer -y
             composer install
         """
     }
