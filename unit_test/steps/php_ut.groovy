@@ -11,7 +11,7 @@ def installdependencies() {
             apt update
             apt install lsb-release ca-certificates apt-transport-https software-properties-common -y
             add-apt-repository ppa:ondrej/php
-            apt install php8.1 -y
+            apt install php -y
             apt install composer -y
             composer install
         """
