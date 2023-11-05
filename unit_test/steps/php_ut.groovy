@@ -9,6 +9,8 @@ def installdependencies() {
         echo "install dependencies... "
         sh """
             composer install
+            export APP_KEY=base64:Eipawu6NuSTDXkeqMKlRarcgptPOn0VlAq264pobd9g=
+
         """
     }
 
