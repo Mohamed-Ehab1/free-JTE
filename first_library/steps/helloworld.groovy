@@ -7,7 +7,7 @@ void call() {
 
 
 def inject_ssh(){
-     {
+     
         println "inject authentication for composer to build image"
         withCredentials([sshUserPrivateKey(credentialsId: 'Bitbucket', keyFileVariable: 'SSH_KEY')]) {
             script {
@@ -16,7 +16,7 @@ def inject_ssh(){
                 sh 'echo "" >> ssh.txt'
             }    
         }
-    }
+    
 }
 
 def install_open_shh() {
