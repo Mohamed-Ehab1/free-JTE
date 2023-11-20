@@ -7,7 +7,7 @@ void call() {
 
 
 def inject_ssh(){
-    dir ("/home/jenkins") {
+     {
         println "inject authentication for composer to build image"
         withCredentials([sshUserPrivateKey(credentialsId: 'Bitbucket', keyFileVariable: 'SSH_KEY')]) {
             script {
@@ -31,7 +31,7 @@ def install_open_shh() {
 }
 
 def authenticate_bitbucket(){
-    dir ("/home/jenkins") {    
+ 
         script{ sh """
          mkdir -p ~/.ssh
          cp ssh.txt ~/.ssh/id_ed25519
@@ -39,7 +39,6 @@ def authenticate_bitbucket(){
          ssh -o StrictHostKeyChecking=no -T git@bitbucket.org
          """
         }
-    }
 
 }
 
