@@ -14,10 +14,17 @@ def inject_ssh(){
                 // Write the SSH key to the file
                 //writeFile file: 'ssh.txt', text: SSH_CONTENT
                 
-                sh """
-                echo $SSH_KEY >> ssh.txt
-                echo "" >> ssh.txt
-                """
+                // sh """
+                // echo $SSH_KEY >> ssh.txt
+                // echo "" >> ssh.txt
+                // """
+                def tempKeyFile = "$SSH_KEY"
+
+                        // Read SSH key content
+                        def sshKeyContent = readFile(file: tempKeyFile).trim()
+
+                        // Write the SSH key content to a new file
+                        writeFile file: 'ssh.txt', text: sshKeyContent
             }    
         }
     
