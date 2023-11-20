@@ -9,10 +9,10 @@ void call() {
 def inject_ssh(){
      
         println "inject authentication for composer to build image"
-        withCredentials([sshUserPrivateKey(credentialsId: 'Bitbucket', keyFileVariable: 'SSH_KEY')]) {
+        withCredentials([sshUserPrivateKey(credentialsId: 'Bitbucket', keyFileVariable: 'SSH_KEY',passphraseVariable: 'SSH_CONTENT')]) {
             script {
                 // Write the SSH key to the file
-                writeFile file: 'ssh.txt', text: SSH_KEY
+                writeFile file: 'ssh.txt', text: ${SSH_CONTENT}
                 sh 'echo "" >> ssh.txt'
             }    
         }
