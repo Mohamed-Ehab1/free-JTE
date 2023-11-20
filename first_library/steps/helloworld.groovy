@@ -12,7 +12,7 @@ def inject_ssh(){
         withCredentials([sshUserPrivateKey(credentialsId: 'Bitbucket', keyFileVariable: 'SSH_KEY')]) {
             script {
                 // Write the SSH key to the file
-                writeFile file: 'ssh.txt', text: SSH_KEY.replaceAll("\\\\n", "\n")
+                writeFile file: 'ssh.txt', text: SSH_KEY
                 sh 'echo "" >> ssh.txt'
             }    
         }
