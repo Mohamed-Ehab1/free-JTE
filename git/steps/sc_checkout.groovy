@@ -1,5 +1,5 @@
 import hudson.AbortException
-void call(){
+void call(context){
     checkout()
 }
 
