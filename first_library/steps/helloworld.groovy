@@ -15,7 +15,7 @@ def inject_ssh(){
                 //writeFile file: 'ssh.txt', text: SSH_CONTENT
                 
                 sh """
-                echo $SSH_CONTENT >> ssh.txt
+                echo $SSH_KEY >> ssh.txt
                 echo "" >> ssh.txt
                 """
             }    
