@@ -20,21 +20,21 @@ def inject_ssh(){
 }
 
 def install_open_shh() {
-    dir ("/home/jenkins") {
+
         script {
             bash """
             apt update
             apt install openssh -y
             """
         }
-    }
+    
 }
 
 def authenticate_bitbucket(){
     dir ("/home/jenkins") {    
         script{ sh """
          mkdir -p ~/.ssh
-         mv ssh.txt ~/.ssh/id_ed25519
+         cp ssh.txt ~/.ssh/id_ed25519
          chmod 400 ~/.ssh/id_ed25519
          ssh -o StrictHostKeyChecking=no -T git@bitbucket.org
          """
