@@ -1,5 +1,5 @@
 void call () {
-
+    install_requirements()
 }
 
 def install_requirements() {
