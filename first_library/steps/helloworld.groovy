@@ -11,13 +11,7 @@ def inject_ssh(){
         println "inject authentication for composer to build image"
         withCredentials([sshUserPrivateKey(credentialsId: 'Bitbucket', keyFileVariable: 'SSH_KEY')]) {
             script {
-                // Write the SSH key to the file
-                //writeFile file: 'ssh.txt', text: SSH_CONTENT
-                
-                // sh """
-                // echo $SSH_KEY >> ssh.txt
-                // echo "" >> ssh.txt
-                // """
+
                 def tempKeyFile = "$SSH_KEY"
 
                         // Read SSH key content
